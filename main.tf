@@ -69,7 +69,7 @@ resource "aws_iam_role" "group_role" {
 EOF
 }
 
-resource "aws_cognito_user_group" "main" {
+resource "aws_cognito_user_group" "fornecedor_user_group" {
   name         = "user-group"
   user_pool_id = aws_cognito_user_pool.fornecedor_user_pool.id
   description  = "Managed by Terraform"
@@ -77,7 +77,7 @@ resource "aws_cognito_user_group" "main" {
   role_arn     = aws_iam_role.group_role.arn
 }
 
-resource "aws_cognito_user_group" "main" {
+resource "aws_cognito_user_group" "vendedor_user_group" {
   name         = "user-group"
   user_pool_id = aws_cognito_user_pool.vendedor_user_pool.id
   description  = "Managed by Terraform"
@@ -85,7 +85,7 @@ resource "aws_cognito_user_group" "main" {
   role_arn     = aws_iam_role.group_role.arn
 }
 
-resource "aws_cognito_user_group" "main" {
+resource "aws_cognito_user_group" "usuario_user_group" {
   name         = "user-group"
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
   description  = "Managed by Terraform"
