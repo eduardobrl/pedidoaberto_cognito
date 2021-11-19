@@ -29,14 +29,6 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_cognito_user_pool" "fornecedor_user_pool" {
-  name = "${var.app_name}-${var.microservice_name}-fornecedor"
-}
-
-resource "aws_cognito_user_pool" "vendedor_user_pool" {
-  name = "${var.app_name}-${var.microservice_name}-vendedor"
-}
-
 resource "aws_cognito_user_pool" "usuario_user_pool" {
   name = "${var.app_name}-${var.microservice_name}-usuario"
 }
@@ -69,21 +61,6 @@ resource "aws_iam_role" "group_role" {
 EOF
 }
 
-resource "aws_cognito_user_group" "fornecedor_user_group" {
-  name         = "user-group"
-  user_pool_id = aws_cognito_user_pool.fornecedor_user_pool.id
-  description  = "Grupo de Usuarios de Fornecedores"
-  precedence   = 42
-  role_arn     = aws_iam_role.group_role.arn
-}
-
-resource "aws_cognito_user_group" "vendedor_user_group" {
-  name         = "user-group"
-  user_pool_id = aws_cognito_user_pool.vendedor_user_pool.id
-  description  = "Grupo de Usuarios de Vendedores"
-  precedence   = 42
-  role_arn     = aws_iam_role.group_role.arn
-}
 
 resource "aws_cognito_user_group" "usuario_user_group" {
   name         = "user-group"
@@ -91,18 +68,6 @@ resource "aws_cognito_user_group" "usuario_user_group" {
   description  = "Grupo de Usuarios de usuarios da empresa"
   precedence   = 42
   role_arn     = aws_iam_role.group_role.arn
-}
-
-resource "aws_ssm_parameter" "sellbridge_cognito_fornecedor_user_pool_arn" {
-  name  = "sellbridge_cognito_fornecedor_user_pool_arn"
-  type  = "String"
-  value = aws_cognito_user_pool.fornecedor_user_pool.arn
-}
-
-resource "aws_ssm_parameter" "sellbridge_cognito_vendedor_user_pool_arn" {
-  name  = "sellbridge_cognito_vendedor_user_pool_arn"
-  type  = "String"
-  value = aws_cognito_user_pool.usuario_user_pool.arn
 }
 
 resource "aws_ssm_parameter" "sellbridge_cognito_usuario_user_pool_arn" {
