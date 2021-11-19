@@ -63,10 +63,26 @@ EOF
 
 
 resource "aws_cognito_user_group" "usuario_user_group" {
-  name         = "user-group"
+  name         = "fornecedor"
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
-  description  = "Grupo de Usuarios de usuarios da empresa"
+  description  = "Grupo de fornecedores"
+  precedence   = 30
+  role_arn     = aws_iam_role.group_role.arn
+}
+
+resource "aws_cognito_user_group" "usuario_user_group" {
+  name         = "vendedor"
+  user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
+  description  = "Grupo de vendedores"
   precedence   = 42
+  role_arn     = aws_iam_role.group_role.arn
+}
+
+resource "aws_cognito_user_group" "usuario_user_group" {
+  name         = "admin"
+  user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
+  description  = "Grupo de Usuarios Adminitradores"
+  precedence   = 1
   role_arn     = aws_iam_role.group_role.arn
 }
 
