@@ -98,7 +98,7 @@ resource "aws_cognito_user_pool_client" "sellbridge_frontend_client" {
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
 
   generate_secret     = false
-  explicit_auth_flows = ["ADMIN_NO_SRP_AUTH", "ALLOW_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
+  explicit_auth_flows = ["ALLOW_USER_SRP_AUTH", "ALLOW_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
 }
 
 
