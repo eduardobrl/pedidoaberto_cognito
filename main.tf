@@ -62,7 +62,7 @@ EOF
 }
 
 
-resource "aws_cognito_user_group" "usuario_user_group" {
+resource "aws_cognito_user_group" "usuario_user_group_fornecedor" {
   name         = "fornecedor"
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
   description  = "Grupo de fornecedores"
@@ -70,7 +70,7 @@ resource "aws_cognito_user_group" "usuario_user_group" {
   role_arn     = aws_iam_role.group_role.arn
 }
 
-resource "aws_cognito_user_group" "usuario_user_group" {
+resource "aws_cognito_user_group" "usuario_user_group_vendedor" {
   name         = "vendedor"
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
   description  = "Grupo de vendedores"
@@ -78,7 +78,7 @@ resource "aws_cognito_user_group" "usuario_user_group" {
   role_arn     = aws_iam_role.group_role.arn
 }
 
-resource "aws_cognito_user_group" "usuario_user_group" {
+resource "aws_cognito_user_group" "usuario_user_group_admin" {
   name         = "admin"
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
   description  = "Grupo de Usuarios Adminitradores"
