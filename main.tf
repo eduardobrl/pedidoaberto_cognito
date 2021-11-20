@@ -30,7 +30,8 @@ provider "aws" {
 }
 
 resource "aws_cognito_user_pool" "usuario_user_pool" {
-  name = "${var.app_name}-${var.microservice_name}-usuario"
+  name                = "${var.app_name}-${var.microservice_name}-usuario"
+  username_attributes = ["email"]
 }
 
 resource "aws_iam_role" "group_role" {
