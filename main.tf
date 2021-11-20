@@ -91,3 +91,14 @@ resource "aws_ssm_parameter" "sellbridge_cognito_usuario_user_pool_arn" {
   type  = "String"
   value = aws_cognito_user_pool.usuario_user_pool.arn
 }
+
+resource "aws_cognito_user_pool_client" "sellbridge_frontend_client" {
+  name = "sellbridge_frontend_client"
+
+  user_pool_id = aws_cognito_user_pool.pool.id
+
+  generate_secret     = false
+  explicit_auth_flows = ["ADMIN_NO_SRP_AUTH", "ALLOW_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
+}
+
+
