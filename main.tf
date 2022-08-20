@@ -15,10 +15,10 @@ terraform {
   }
 
   backend "remote" {
-    organization = "sellbridge"
+    organization = "${var.app_name}"
 
     workspaces {
-      name = "sellbridge-cognito-dev-workspace"
+      name = "${var.app_name}-${var.microservice_name}"
     }
   }
 
