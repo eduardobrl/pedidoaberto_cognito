@@ -15,10 +15,10 @@ terraform {
   }
 
   backend "remote" {
-    organization = var.app_name
+    organization = "pedidoaberto"
 
     workspaces {
-      name = "${var.app_name}-${var.microservice_name}"
+      name = "pedidoaberto-cognito"
     }
   }
 
