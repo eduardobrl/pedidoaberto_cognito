@@ -65,7 +65,7 @@ jobs:
         run: exit 1
 
       - name: Rename environment TF VARS
-        run: mv dev.tfvars dev.auto.tfvars
+        run: mv environments/dev.tfvars dev.auto.tfvars
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/master' && github.event_name == 'push'
