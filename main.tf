@@ -15,7 +15,7 @@ terraform {
   }
 
   backend "remote" {
-    organization = "${var.app_name}"
+    organization = var.app_name
 
     workspaces {
       name = "${var.app_name}-${var.microservice_name}"
