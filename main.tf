@@ -18,7 +18,7 @@ terraform {
     organization = "pedidoaberto"
 
     workspaces {
-      name = "pedidoaberto-cognito"
+      name = "pedidoaberto_cognito"
     }
   }
 
