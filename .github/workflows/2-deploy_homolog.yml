@@ -20,7 +20,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_OIDC_ROLE }} 
           role-session-name: deploy_session
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: ${{ vars.AWS_REGION }}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
