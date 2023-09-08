@@ -14,9 +14,7 @@ terraform {
     }
   }
 
-  backend "cloud" {}
-
-  required_version = "~> 1.0"
+  cloud {}
 }
 
 provider "aws" {
