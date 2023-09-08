@@ -31,8 +31,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init -backend-config="organization=${{ env.TF_CLOUD_ORGANIZATION }}" \
-            -backend-config="workspace=${{ env.TF_WORKSPACE }}"
+        run: terraform init -backend-config="organization=${{ env.TF_CLOUD_ORGANIZATION }}" -backend-config="workspace=${{ env.TF_WORKSPACE }}"
 
       - name: Terraform Validate
         id: validate
