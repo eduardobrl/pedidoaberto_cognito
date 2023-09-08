@@ -63,8 +63,8 @@ EOF
 }
 
 
-resource "aws_cognito_user_group" "usuario_user_group_usuario" {
-  name         = "usuario"
+resource "aws_cognito_user_group" "usuario_user_group_usuario_wishlist" {
+  name         = "usuario_wishlist"
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
   description  = "Grupo de usuario"
   precedence   = 30
