@@ -71,7 +71,7 @@ jobs:
   createPR:
     name: "Create PR"
     runs-on: ubuntu-latest
-    depends-on: terraform
+    needs: terraform
     steps:
       - name: Create Pull Request
         id: cpr
