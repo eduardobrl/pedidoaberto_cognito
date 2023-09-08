@@ -72,8 +72,9 @@ jobs:
     name: "Create PR"
     runs-on: ubuntu-latest
     depends-on: terraform
-    - name: Create Pull Request
-      id: cpr
-      uses: peter-evans/create-pull-request@v5
-      with:
-        branch: develop
+    steps:
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: develop
