@@ -14,7 +14,9 @@ terraform {
     }
   }
 
-  backend "remote" { }
+  backend "remote" {
+    
+  }
 
   required_version = "~> 1.0"
 }
