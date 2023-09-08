@@ -63,26 +63,18 @@ EOF
 }
 
 
-resource "aws_cognito_user_group" "usuario_user_group_fornecedor" {
-  name         = "fornecedor"
+resource "aws_cognito_user_group" "usuario_user_group_usuario" {
+  name         = "usuario"
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
-  description  = "Grupo de fornecedores"
+  description  = "Grupo de usuario"
   precedence   = 30
-  role_arn     = aws_iam_role.group_role.arn
-}
-
-resource "aws_cognito_user_group" "usuario_user_group_vendedor" {
-  name         = "vendedor"
-  user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
-  description  = "Grupo de vendedores"
-  precedence   = 42
   role_arn     = aws_iam_role.group_role.arn
 }
 
 resource "aws_cognito_user_group" "usuario_user_group_admin" {
   name         = "admin"
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
-  description  = "Grupo de Usuarios Adminitradores"
+  description  = "Grupo de Usuarios Administradores"
   precedence   = 1
   role_arn     = aws_iam_role.group_role.arn
 }
@@ -93,8 +85,8 @@ resource "aws_ssm_parameter" "sellbridge_cognito_usuario_user_pool_arn" {
   value = aws_cognito_user_pool.usuario_user_pool.arn
 }
 
-resource "aws_cognito_user_pool_client" "sellbridge_frontend_client" {
-  name = "sellbridge_frontend_client"
+resource "aws_cognito_user_pool_client" "pedidoaberto_frontend_client" {
+  name = "pedidoaberto_frontend_client"
 
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
 
