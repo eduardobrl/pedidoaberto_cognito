@@ -16,6 +16,7 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
+    environment: Homologação
     steps:
       - name: Checkout
         uses: actions/checkout@v2

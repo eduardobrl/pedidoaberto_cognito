@@ -18,6 +18,7 @@ jobs:
   terraform:
     name: "Deploy Terraform"
     runs-on: ubuntu-latest
+    environment: Homologação
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v3
