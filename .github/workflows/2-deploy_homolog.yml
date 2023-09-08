@@ -74,4 +74,4 @@ jobs:
         run: mv environments/hom/hom.tfvars hom.auto.tfvars
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve -backend-config=environments/hom/config.remote.tfbackend
+        run: terraform apply -backend-config=environments/hom/config.remote.tfbackend -auto-approve
