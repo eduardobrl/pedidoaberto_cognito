@@ -14,13 +14,7 @@ terraform {
     }
   }
 
-  backend "remote" {
-    organization = "pedidoaberto"
-
-    workspaces {
-      name = "pedidoaberto_cognito"
-    }
-  }
+  backend "remote" {}
 
   required_version = "~> 1.0"
 }
