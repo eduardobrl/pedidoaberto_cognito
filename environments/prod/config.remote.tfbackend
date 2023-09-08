@@ -1,0 +1,3 @@
+workspaces { name = "pedidoaberto_cognito_hom" }
+hostname     = "app.terraform.io"
+organization = "pedidoaberto"
