@@ -74,5 +74,4 @@ jobs:
         run: mv environments/hom/hom.tfvars hom.auto.tfvars
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         run: terraform apply -auto-approve -backend-config=environments/hom/config.remote.tfbackend
