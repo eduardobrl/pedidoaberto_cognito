@@ -14,7 +14,7 @@ terraform {
     }
   }
 
-  backend "remote" {}
+  backend "cloud" {}
 
   required_version = "~> 1.0"
 }
