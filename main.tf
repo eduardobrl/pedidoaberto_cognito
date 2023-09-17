@@ -106,4 +106,14 @@ resource "aws_cognito_user_pool_client" "pedidoaberto_frontend_client" {
   explicit_auth_flows = ["ALLOW_USER_SRP_AUTH", "ALLOW_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
 }
 
+resource "aws_cognito_user_pool_domain" "this" {
+  domain       = "pedidoaberto"
+  user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
+}
+
+resource "aws_cognito_user_pool_ui_customization" "example" {
+  client_id = aws_cognito_user_pool_client.pedidoaberto_frontend_client.id
+
+  user_pool_id = aws_cognito_user_pool_domain.this.user_pool_id
+}
 
