@@ -32,6 +32,18 @@ provider "aws" {
 resource "aws_cognito_user_pool" "usuario_user_pool" {
   name                = "${var.app_name}-${var.microservice_name}-usuario"
   username_attributes = ["email"]
+
+    account_recovery_setting {
+      recovery_mechanism {
+        name     = "verified_email"
+        priority = 1
+      }
+
+      recovery_mechanism {
+        name     = "verified_phone_number"
+        priority = 2
+      }
+  }
 }
 
 resource "aws_iam_role" "group_role" {
