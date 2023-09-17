@@ -102,9 +102,9 @@ resource "aws_cognito_user_pool_client" "pedidoaberto_frontend_client" {
 
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
 
-  default_redirect_uri = "localhost"
-  callback_urls        = ["localhost"]
-  logout_urls          = ["localhost"]
+  default_redirect_uri = "http://localhost"
+  callback_urls        = ["http://localhost"]
+  logout_urls          = ["http://localhost"]
 
   generate_secret     = false
   explicit_auth_flows = ["ALLOW_USER_SRP_AUTH", "ALLOW_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
