@@ -33,16 +33,16 @@ resource "aws_cognito_user_pool" "usuario_user_pool" {
   name                = "${var.app_name}-${var.microservice_name}-usuario"
   username_attributes = ["email"]
 
-    account_recovery_setting {
-      recovery_mechanism {
-        name     = "verified_email"
-        priority = 1
-      }
+  account_recovery_setting {
+    recovery_mechanism {
+      name     = "verified_email"
+      priority = 1
+    }
 
-      recovery_mechanism {
-        name     = "verified_phone_number"
-        priority = 2
-      }
+    recovery_mechanism {
+      name     = "verified_phone_number"
+      priority = 2
+    }
   }
 }
 
