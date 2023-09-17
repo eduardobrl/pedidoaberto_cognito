@@ -102,7 +102,7 @@ resource "aws_cognito_user_pool_client" "pedidoaberto_frontend_client" {
 
   user_pool_id = aws_cognito_user_pool.usuario_user_pool.id
 
-  default_redirect_uri = ["localhost"]
+  default_redirect_uri = "localhost"
   callback_urls        = ["localhost"]
   logout_urls          = ["localhost"]
 
