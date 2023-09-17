@@ -113,7 +113,7 @@ resource "aws_cognito_user_pool_domain" "this" {
 
 resource "aws_cognito_user_pool_ui_customization" "example" {
   client_id = aws_cognito_user_pool_client.pedidoaberto_frontend_client.id
-
+  css        = ".label-customizable {font-weight: 400;}"
   user_pool_id = aws_cognito_user_pool_domain.this.user_pool_id
 }
 
